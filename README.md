@@ -7,7 +7,7 @@
 *功能: <br/>
 *1.提取参数,如:pythoon Extract_urls.py -h中的h进行处理<br/>                 
 *2.打开保存url的文件,with...as...方式<br/>
-*3.从url中提取首页,正则表达式<br/>
+*3.提取所有urls的首页并去重,正则表达式<br/>
 *4.将首页地址保存到数据库(MySql/MongoDB)<br/>
 *5.gevent+requests异步下载首页内容html<br/>
 *6.将首页内容html通过smtp邮件发送<br/>
