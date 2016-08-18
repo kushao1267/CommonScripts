@@ -24,10 +24,8 @@ http://www.baidu.com/admin<br/>
 fggdfghttp://www.baidu.com/login<br/>
 http://www.kingdee.com/login<br/>
 a<br/>
-http://www.sina.com.c<br/><br/>
+http://www.sina.com.cn<br/>
 ---------------------------------------------<br/>
-
 </p>
-
 </body>
 </html>
