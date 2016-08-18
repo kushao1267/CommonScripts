@@ -78,8 +78,7 @@ def extract(urls):
     for i in urls:
         r = re.search(pa, i)
         if r:   #排除其他字符串干扰
-            if r.group() not in res:
-                res.add(r.group())
+            res.add(r.group())
     print res
     return res
 
