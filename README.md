@@ -1,11 +1,10 @@
 <html>
 <h1>目录:</h1>
 <p>1.Extract_urls<br/>
-2.Craw_pic<br/></p>
+2.Craw_pic<br/><br/></p>
 <body>
 <p>
-<h3>Extract_urls<br/>
----------一个提取url首页进行各种处理的脚本----------<br/></h3>
+<h3>Extract_urls:一个提取url首页进行各种处理的脚本<br/></h3>
 ****************************************************<br/>
 *功能: <br/>
 *1.提取参数,如:pythoon Extract_urls.py -h中的h进行处理<br/>                 
@@ -34,8 +33,7 @@ http://www.sina.com.cn<br/>
 2.解决"被认定为垃圾邮件"<br/>
 </p>
 <p>
-<h3>Craw_pic<br/>
---抓取某x0网站xx区全部图片,使用gevent+requests异步下载方式--<br/></h3>
+<h3>Craw_pic:抓取某x0网站xx区全部图片,使用gevent+requests异步下载方式<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取<br/>
