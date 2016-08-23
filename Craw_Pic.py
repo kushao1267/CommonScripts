@@ -14,6 +14,9 @@ from gevent import monkey;monkey.patch_all()
 import gevent
 
 ISOTIMEFORMAT='%Y-%m-%d %X'
+#--------创建路径,储存图片------------
+BASEPATH = os.getcwd()+'/49vvpic/'
+
 
 def print_node(node): #打印Element元素
     print "==============================================" 
@@ -50,7 +53,7 @@ def download(url):#图片下载
 #     print res.encoding
     print '正在下载图片:'+url
     name=re.split(r'\.|/+',url) 
-    filesavepath = os.getcwd()+'/49vvpic/'+name[-3]+str(time.time())+'.'+name[-1]
+    filesavepath = BASEPATH+name[-3]+str(time.time())+'.'+name[-1]
     with open(filesavepath,'wb') as f:#图片下载
         f.write(res.content)
 
@@ -68,14 +71,18 @@ if __name__=='__main__':
     r = requests.get('http://www.bg6f.com/404.html?/')
     root_url = re.findall(r'<div class=".*?">.*?<a href=".*?">(.*?)</a><a tppabs=".*?" target=".*?" href=".*?"><img src=".*?" tppabs=".*?"/></a></div>', r.content, re.S)
     print root_url
-    numth_url = choose(root_url)    #根据选择,构造网页
+    #根据选择,构造要访问的页面
+    numth_url = choose(root_url)    
     print numth_url
-    #解决有时返回0个url的情况
+    #解决指定页有时返回0个url的情况
     while True:      
         (numofurl,urls) = get_urls(root_url[0],numth_url)
         if numofurl != 0:
             break
-        
+    #创建图片目录
+    if not os.path.isdir(BASEPATH):
+        os.mkdir(BASEPATH)    
+    #开始下载
     for url in urls:
         pic_urls = get_pic_url(url)         #正则爬取图片url
         gevent.joinall([gevent.spawn(download,pic_url) for pic_url in pic_urls])
