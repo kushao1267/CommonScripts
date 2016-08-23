@@ -1,10 +1,10 @@
 #coding=utf-8
 '''
 ------------整站抓取图片,使用gevent+requests异步下载方式------------------
-1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取
-2.使requests下载
-3.正则爬取url所有图片
-4.异步IO处理图片下载任务
+*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取
+*2.使requests下载
+*3.正则爬取url所有图片
+*4.异步IO处理图片下载任务
 '''
 import re
 import requests
@@ -50,20 +50,25 @@ def download(url):#图片下载
 #     print res.encoding
     print '正在下载图片:'+url
     name=re.split(r'\.|/+',url) 
-    filesavepath = os.getcwd()+'/49vvpic/'+name[-3]+time.strftime(ISOTIMEFORMAT,time.localtime( time.time()))+'.'+name[-1]
+    filesavepath = os.getcwd()+'/49vvpic/'+name[-3]+str(time.time())+'.'+name[-1]
     with open(filesavepath,'wb') as f:#图片下载
         f.write(res.content)
+
+def choose(root_url):
+    print '亚洲:asia,欧美:oumei,自拍:zipai,美腿:meitui,动漫:cartoon'
+    area = raw_input('看什么区?请输入拼音:')
+    number = raw_input('爬取第几页?:')
+    #http://www.c53x.com/AAtupian/AAtb/zipai/index.html   首页
+    #首页index,第二页index-2,第三页index-3...
+    number ='' if number == '1' else '-'+number    
+    return root_url[0]+'AAtupian/AAtb/'+area+'/index'+number+'.html'
 
 if __name__=='__main__':
     #获取root_url
     r = requests.get('http://www.bg6f.com/404.html?/')
     root_url = re.findall(r'<div class=".*?">.*?<a href=".*?">(.*?)</a><a tppabs=".*?" target=".*?" href=".*?"><img src=".*?" tppabs=".*?"/></a></div>', r.content, re.S)
     print root_url
-    number = raw_input('爬取第几页?:')
-    #http://www.c53x.com/AAtupian/AAtb/zipai/index.html   首页
-    #首页index,第二页index-2,第三页index-3...
-    number ='' if number == '1' else '-'+number    
-    numth_url = root_url[0]+'AAtupian/AAtb/zipai/index'+number+'.html'
+    numth_url = choose(root_url)    #根据选择,构造网页
     print numth_url
     #解决有时返回0个url的情况
     while True:      
