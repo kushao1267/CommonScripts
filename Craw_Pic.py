@@ -59,7 +59,11 @@ def download(url):#图片下载
 
 def choose(root_url):
     print '亚洲:asia,欧美:oumei,自拍:zipai,美腿:meitui,动漫:cartoon'
-    area = raw_input('看什么区?请输入拼音:')
+    areas = ['asia','oumei','zipai','meitui','cartoon']
+    while True:
+        area = raw_input('看什么区?请输入拼音:').strip()
+        if area in areas:
+            break
     number = raw_input('爬取第几页?:')
     #http://www.c53x.com/AAtupian/AAtb/zipai/index.html   首页
     #首页index,第二页index-2,第三页index-3...
@@ -67,8 +71,12 @@ def choose(root_url):
     return root_url+'AAtupian/AAtb/'+area+'/index'+number+'.html'
 
 if __name__=='__main__':
-    #获取root_url
-    r = requests.get('http://www.bg6f.com/404.html?/')
+    try:
+        #获取root_url,防止网页挂掉
+        r = requests.get('http://www.bg6f.com/404.html?/')
+    except Exception:
+        print '网络链接失败!请检查网络:'
+        exit(0)
     root_url = re.findall(r'<li>.*地址：<a href=".*?">(.*?)</a>&nbsp;',r.content,re.S)
     print 'root_url:',root_url
     #根据选择,构造要访问的页面
