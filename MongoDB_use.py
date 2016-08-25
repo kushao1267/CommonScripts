@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+'''
+pyMongo的使用方法
+'''
 import pymongo
 import datetime
-
 
 def get_db():
     # 建立连接
