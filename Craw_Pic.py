@@ -64,15 +64,15 @@ def choose(root_url):
     #http://www.c53x.com/AAtupian/AAtb/zipai/index.html   首页
     #首页index,第二页index-2,第三页index-3...
     number ='' if number == '1' else '-'+number    
-    return root_url[0]+'AAtupian/AAtb/'+area+'/index'+number+'.html'
+    return root_url+'AAtupian/AAtb/'+area+'/index'+number+'.html'
 
 if __name__=='__main__':
     #获取root_url
     r = requests.get('http://www.bg6f.com/404.html?/')
-    root_url = re.findall(r'<div class=".*?">.*?<a href=".*?">(.*?)</a><a tppabs=".*?" target=".*?" href=".*?"><img src=".*?" tppabs=".*?"/></a></div>', r.content, re.S)
-    print root_url
+    root_url = re.findall(r'<li>.*地址：<a href=".*?">(.*?)</a>&nbsp;',r.content,re.S)
+    print 'root_url:',root_url
     #根据选择,构造要访问的页面
-    numth_url = choose(root_url)    
+    numth_url = choose(root_url[0])    
     print numth_url
     #解决指定页有时返回0个url的情况
     while True:      
