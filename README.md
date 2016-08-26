@@ -4,7 +4,7 @@
 2.Craw_pic<br/>
 3.Zodiac<br/>
 4.MongoDB_use<br/>
-5.sinaweibo_login<br/></p>
+5.Sinaweibo_login<br/></p>
 
 <body>
 <p>
@@ -37,13 +37,12 @@ http://www.sina.com.cn<br/>
 2.解决"被认定为垃圾邮件"<br/>
 </p>
 <p>
-<h3>Craw_pic:抓取某x0网站xx区全部图片,使用gevent+requests异步下载方式<br/></h3>
+<h3>Craw_pic:抓取某x0网站xx区全部图片,使用gevent+requests并发下载方式<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
-*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取<br/>
-*2.使requests下载<br/>
-*3.正则爬取url所有图片<br/>
-*4.异步IO处理图片下载任务<br/>
+*1.lxml包xpath工具获取url,其中xpath值从chrome开发者工具获取<br/>
+*2.正则爬取url所有图片<br/>
+*3.并发处理图片下载任务<br/>
 ************************************************************<br/>
 <br/>
 已经解决:
@@ -73,7 +72,7 @@ http://www.sina.com.cn<br/>
 <br/>
 </p>
 <p>
-<h3>sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式<br/></h3>
+<h3>Sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.新浪微博模拟登陆,POST方式<br/>
