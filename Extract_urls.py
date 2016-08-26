@@ -24,16 +24,12 @@ http://www.sina.com.cn
 ------------------------------------
 '''
 
-import re
-import os
-import sys
-import MySQLdb
-import pymongo
-import time
+import re,os,sys
+import MySQLdb,pymongo
+import time,smtplib
 import requests
 import gevent
 from gevent import monkey;monkey.patch_all()
-import smtplib
 from email.mime.text import MIMEText
 
 def argv_operate(argv):
