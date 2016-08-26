@@ -60,18 +60,18 @@ def choose(root_url):
         if area in areas:
             break
     number = raw_input('爬取第几页?:')
-    #http://www.c53x.com/AAtupian/AAtb/zipai/index.html   首页
+    #http://www.xxxx.com/AAtupian/AAtb/zipai/index.html   首页
     #首页index,第二页index-2,第三页index-3...
     number ='' if number == '1' else '-'+number    
     return root_url+'AAtupian/AAtb/'+area+'/index'+number+'.html'
 
 if __name__=='__main__':
     try:
-        #获取root_url,防止网页挂掉
         r = requests.get('http://www.bg6f.com/404.html?/')
     except Exception:
         print '网络链接失败!请检查网络:'
         exit(0)
+    #获取root_url,防止网页挂掉
     root_url = re.findall(r'<li>.*地址：<a href=".*?">(.*?)</a>&nbsp;',r.content,re.S)
     print 'root_url:',root_url
     #根据选择,构造要访问的页面
