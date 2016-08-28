@@ -5,7 +5,8 @@
 *2.使requests下载
 *3.正则爬取url所有图片
 *4.协程处理图片下载任务
-*5.tqdm进度显示
+*5.tqdm显示进度
+*6.自动打开文件夹窗口展示图片
 '''
 import re,requests
 from tqdm import *
@@ -17,22 +18,17 @@ import gevent
 ISOTIMEFORMAT='%Y-%m-%d %X'
 #--------创建路径,储存图片------------
 BASEPATH = os.getcwd()+'/49vvpic/'
+ORIGIN_URL = 'http://www.bg6f.com/404.html?/'
 
 def get_urls(root_url,numth_url):
-    urls = set()
     res = requests.get(numth_url)
     selector = etree.HTML(res.content)
     #------取中文标题------"
-    #//*[@id="gotop"]/div[2]/div/div/div[3]/div/ul/li[6]/a/text()
-#     pic_name = selector.xpath("//*[@id='gotop']/div[2]/div/div/div[3]/div/ul/li/a/text()")
-#     for i in pic_name:  #对应的url中文标题
-#         print i
+    pic_name = selector.xpath("//*[@id='gotop']/div[2]/div/div/div[3]/div/ul/li/a/text()")
     pic = selector.xpath("//*[@id='gotop']/div[2]/div/div/div[3]/div/ul/li/a")
-    for node in pic:    #获取自拍区第一页所有urls
-        urls.add(root_url+node.attrib['href'])        
-    print '抓取url数量:',len(pic)
+    #将url名与对应的url进行打包
+    urls = zip(pic_name,[root_url+node.attrib['href'] for node in pic])
     return (len(pic),urls)
-
 
 def get_pic_url(url):   #获取指定url下的所有图片url
     res = requests.get(url)
@@ -41,14 +37,14 @@ def get_pic_url(url):   #获取指定url下的所有图片url
     print '\n图片数量:',len(pic_urls)
     return pic_urls if len(pic_urls)<=10 else pic_urls[:20]    #每个网页最多下20张,因为很多重复的图片
         
-def download(url):#图片下载
+def download(title,url):#图片下载
     url = re.sub(r'%2[eE]','.',url,re.IGNORECASE)   #如果.被编码为%2E则改回.
     res = requests.get(url)
 #     print res.status_code
 #     print res.encoding
     print '正在下载图片:'+url
     name=re.split(r'\.|/+',url) 
-    filesavepath = BASEPATH+name[-3]+str(time.time())+'.'+name[-1]
+    filesavepath = title+name[-3]+str(time.time())+'.'+name[-1]
     with open(filesavepath,'wb') as f:#图片下载
         f.write(res.content)
 
@@ -60,21 +56,31 @@ def choose(root_url):
         if area in areas:
             break
     number = raw_input('爬取第几页?:')
-    #http://www.xxxx.com/AAtupian/AAtb/zipai/index.html   首页
     #首页index,第二页index-2,第三页index-3...
-    number ='' if number == '1' else '-'+number    
+    number ='' if number == '1' or number=='' else '-'+number    
     return root_url+'AAtupian/AAtb/'+area+'/index'+number+'.html'
 
+def do_work(BASEPATH,urls):
+    for pic_name,url in tqdm(urls):  #tqdm封装迭代器,显示进度
+        title = BASEPATH+pic_name+'/'   #根据标题,创建子目录,易于区分图集
+        print '\n开始下载:',pic_name
+        if not os.path.isdir(title):
+            os.mkdir(title)
+        pic_urls = get_pic_url(url)         #正则爬取图片url
+        gevent.joinall([gevent.spawn(download,title,pic_url) for pic_url in pic_urls])#gevent并发下载
+    print '\n下载完成!!'
+    
+ 
 if __name__=='__main__':
     try:
-        r = requests.get('http://www.bg6f.com/404.html?/')
+        #从防黑页面获取root_url,防止网页挂掉
+        r = requests.get(ORIGIN_URL)
     except Exception:
         print '网络链接失败!请检查网络:'
         exit(0)
-    #获取root_url,防止网页挂掉
     root_url = re.findall(r'<li>.*地址：<a href=".*?">(.*?)</a>&nbsp;',r.content,re.S)
     print 'root_url:',root_url
-    #根据选择,构造要访问的页面
+    #选择页面,第一页,第二页>..
     numth_url = choose(root_url[0])    
     print numth_url
     #解决指定页有时返回0个url的情况
@@ -82,14 +88,12 @@ if __name__=='__main__':
         (numofurl,urls) = get_urls(root_url[0],numth_url)
         if numofurl != 0:
             break
-    #创建图片目录
+    #创建根目录
     if not os.path.isdir(BASEPATH):
-        os.mkdir(BASEPATH)    
+        os.mkdir(BASEPATH)
+        os.system('nautilus '+BASEPATH) #打开文件夹图像窗口
     #开始下载
-    for url in tqdm(urls):  #tqdm封装迭代器,可以显示进度
-        pic_urls = get_pic_url(url)         #正则爬取图片url
-        gevent.joinall([gevent.spawn(download,pic_url) for pic_url in pic_urls])
-    print '\n下载完成!!'
+    do_work(BASEPATH,urls)
     
         
     
