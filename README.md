@@ -1,10 +1,13 @@
 <html>
 <h1>目录:</h1>
-<p>1.Extract_urls<br/>
+<p>
+1.Extract_urls<br/>
 2.Craw_pic<br/>
 3.Zodiac<br/>
 4.MongoDB_use<br/>
-5.Sinaweibo_login<br/></p>
+5.Sinaweibo_login<br/>
+6.Sort_method</br>
+</p>
 
 <body>
 <p>
@@ -85,7 +88,7 @@ http://www.sina.com.cn<br/>
 </p>
 
 <p>
-<h3>sort_method:新浪微博模拟登陆,POST方式和cookie方式<br/></h3>
+<h3>Sort_method:完成6种排序算法<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.python完成六种排序算法  <br/>
