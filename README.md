@@ -40,10 +40,10 @@ http://www.sina.com.cn<br/>
 <h3>Craw_pic:抓取某x0网站xx区全部图片<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
-*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取
-*2.正则爬取url所有图片url
-*3.用gevent+requests并发下载图片
-*4.tqdm进度显示
+*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取<br/>
+*2.正则爬取url所有图片url<br/>
+*3.用gevent+requests并发下载图片<br/>
+*4.tqdm进度显示<br/>
 ************************************************************<br/>
 <br/>
 已经解决:
