@@ -15,7 +15,6 @@ from lxml import etree
 from gevent import monkey;monkey.patch_all()
 import gevent
 
-ISOTIMEFORMAT='%Y-%m-%d %X'
 #--------创建路径,储存图片------------
 BASEPATH = os.getcwd()+'/49vvpic/'
 ORIGIN_URL = 'http://www.bg6f.com/404.html?/'
