@@ -1,18 +1,18 @@
 <html>
 <h1>目录:</h1>
 <p>
-1.Extract_urls<br/>
-2.Craw_pic<br/>
-3.Zodiac<br/>
-4.MongoDB_use<br/>
-5.Sinaweibo_login<br/>
-6.Sort_method</br>
-7.Decorator</br>
+1.extract_urls<br/>
+2.craw_pic<br/>
+3.zodiac<br/>
+4.mongoDB_use<br/>
+5.sinaweibo_login<br/>
+6.sort_method</br>
+7.decorator</br>
 </p>
 
 <body>
 <p>
-<h3>Extract_urls:一个提取url首页进行各种处理的脚本<br/></h3>
+<h3>extract_urls:一个提取url首页进行各种处理的脚本<br/></h3>
 ****************************************************<br/>
 *功能: <br/>
 *1.提取参数,如:pythoon Extract_urls.py -h中的h进行处理<br/>                 
@@ -41,7 +41,7 @@ http://www.sina.com.cn<br/>
 2.解决"被认定为垃圾邮件"<br/>
 </p>
 <p>
-<h3>Craw_pic:抓取某x0网站xx区全部图片<br/></h3>
+<h3>craw_pic:抓取某x0网站xx区全部图片<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取<br/>
@@ -59,7 +59,7 @@ http://www.sina.com.cn<br/>
 2.网址挂掉如何使用它的备用网站(代码已写等它挂)<br/>
 </p>
 <p>
-<h3>Zodiac:根据日期计算星座<br/></h3>
+<h3>zodiac:根据日期计算星座<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.计算星座<br/>
@@ -68,7 +68,7 @@ http://www.sina.com.cn<br/>
 <br/>
 </p>
 <p>
-<h3>MongoDB_use:pyMongo的使用总结<br/></h3>
+<h3>mongoDB_use:pyMongo的使用总结<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.pyMongo的使用总结<br/>
@@ -77,7 +77,7 @@ http://www.sina.com.cn<br/>
 <br/>
 </p>
 <p>
-<h3>Sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式<br/></h3>
+<h3>sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.新浪微博模拟登陆,POST方式<br/>
@@ -89,7 +89,7 @@ http://www.sina.com.cn<br/>
 </p>
 
 <p>
-<h3>Sort_method:完成6种排序算法<br/></h3>
+<h3>sort_method:完成6种排序算法<br/></h3>
 ************************************************************<br/>
 *功能: <br/>
 *1.python完成六种排序算法  <br/>
@@ -105,7 +105,7 @@ http://www.sina.com.cn<br/>
         
     #桶排序<br/>
 ************************************************************<br/>
-<h3>Decorator:装饰器<br/></h3>
+<h3>decorator:装饰器<br/></h3>
 ************************************************************<br/>
 *功能:装饰器 <br/>
 *1.同时实现@log与@log()<br/>
