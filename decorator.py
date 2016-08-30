@@ -6,7 +6,8 @@
 python中,一切皆对象,函数也是对象.
 因此def func().我可以将函数赋值给一个变量,如f=func
 '''
-import functools,time
+import functools
+import time
 #给func打log,,log('execute')(func)(6)可以执行下面的函数
 def log(text_or_func):
     if type(text_or_func)==str: #callable(text_or_func)判断也可以
