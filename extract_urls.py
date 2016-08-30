@@ -2,7 +2,7 @@
 '''
 *****************************************
 *功能: 
-*1.提取参数,如:python Extract_urls.py -h中的h进行处理                         
+*1.提取参数,如:python extract_urls.py -h中的h进行处理                         
 *2.打开保存url的文件,with...as...方式
 *3.从url中提取首页,正则表达式
 *4.将首页地址保存到数据库(MySql/MongoDB)
@@ -24,9 +24,13 @@ http://www.sina.com.cn
 ------------------------------------
 '''
 
-import re,os,sys
-import MySQLdb,pymongo
-import time,smtplib
+import re
+import os
+import sys
+import MySQLdb
+import pymongo
+import time
+import smtplib
 import requests
 import gevent
 from gevent import monkey;monkey.patch_all()
@@ -126,7 +130,7 @@ def down_manager(urls):
         data = requests.get(urls.pop()).content    #取最后一个url的html页面返回
         return data
 
-def SendEmail(mail_host,fromwho,password,towho,content):   #content:html/文本
+def send_email(mail_host,fromwho,password,towho,content):   #content:html/文本
     #构建MIME
     msg = MIMEText(content,'html','utf-8')
     msg['Subject']='hello'
@@ -172,7 +176,7 @@ if __name__=='__main__':
     password = 'xx'
     towho = 'xx@qq.com'
     print content
-    if SendEmail(mail_host,fromwho,password,towho,content):
+    if send_email(mail_host,fromwho,password,towho,content):
         print '发送成功!'
     else:
         print '发送失败!'
