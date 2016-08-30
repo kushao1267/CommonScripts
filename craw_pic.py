@@ -8,9 +8,11 @@
 *5.tqdm显示进度
 *6.自动打开文件夹窗口展示图片
 '''
-import re,requests
+import re
+import requests
 from tqdm import *
-import os,time
+import os
+import time
 from lxml import etree
 from gevent import monkey;monkey.patch_all()
 import gevent
