@@ -7,6 +7,7 @@
 >* sinaweibo_login 
 >* sort_method
 >* decorator
+>* pointer_operation
 
 ---
 
