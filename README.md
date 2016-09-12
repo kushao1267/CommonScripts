@@ -118,7 +118,7 @@ http://www.sina.com.cn
 
 ---
 
-###9.big_data：机器学习与大数据分析,主要是numpy/pandas/skilearn几个库的使用．
+###9.big_data：机器学习与大数据分析,主要是numpy/pandas/skilearn/scipy几个库的使用．
 >流程：数据爬取->加载->归一化->特征选择->RFE建模->ML分类算法->参数优化
 >* 加载*.csv数据文件
 >* 各种skilearn中包含的经典Machine Learning分类算法
