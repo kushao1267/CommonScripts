@@ -9,6 +9,7 @@
 >* decorator
 >* pointer_operation
 >* big_data
+>* my_profile
 
 ---
 
@@ -123,5 +124,11 @@ http://www.sina.com.cn
 >* 加载*.csv数据文件
 >* 各种skilearn中包含的经典Machine Learning分类算法
 >* 参数优化模型
+
+---
+
+###10.my_profile：对python脚本运行时间profile,测试性能瓶颈.
+>* 使用方式：命令行输入python my_profile -p xxx.py，将输出报告到屏幕.
+>* 使用python内置模块pstats.
 
 ---
