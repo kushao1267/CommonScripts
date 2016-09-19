@@ -2,7 +2,7 @@
 script_pys
 =========
 ##目录:
-
+```
     1.extract_urls 
     2.craw_pic 
     3.zodiac 
@@ -12,8 +12,7 @@ script_pys
     7.decorator
     8.pointer_operation
     9.big_data
-    10.my_profile
-
+```
 ---
 
 ###1.extract_urls:一个提取url首页进行各种处理的脚本
@@ -75,7 +74,7 @@ tqdm进度显示
 功能:  
 ```
 计算星座 
-能够处理边界条件 
+处理边界条件 
 ```
 
 --- 
@@ -90,7 +89,7 @@ pyMongo的使用总结
  
 ###5.sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式
 
->功能:  
+功能:  
 ```
 新浪微博模拟登陆,POST方式 
 新浪微博模拟登陆,cookie方式 
@@ -100,7 +99,6 @@ pyMongo的使用总结
 ```
 1.POST方式会被重定向,通过接入sina API可以使用POST方式进入真正的主页 
 ```
- 
 ---
 
 ###6.sort_method:完成6种排序算法
@@ -118,39 +116,46 @@ pyMongo的使用总结
 
 ###7.decorator:装饰器 
 
->功能:装饰器  
->* 同时实现@log与@log() 
->* 实现@performance 
+功能:装饰器  
+```
+同时实现@log与@log() 
+实现@performance
+```
 
 ---
 
 ###8.pointer_operation: Python版的结构体指针操作,之前用C写了一遍，现在再熟悉一下
+功能:链表指针操作  
+```
+初始化链表
+插入元素 
+删除元素
+遍历链表
+反转链表
+合并有序链表
+查找两个链表的交点
+```
 
->功能:链表指针操作  
->* 初始化链表
->* 插入元素 
->* 删除元素
->* 遍历链表
->* 反转链表
->* 合并有序链表
->* 查找两个链表的交点
-
-`待解决问题: 
+待解决问题: 
+```
 1.链表是否成环 
-2.环的入口`
-
+2.环的入口
+```
 ---
 
 ###9.big_data：机器学习与大数据分析,主要是numpy/pandas/skilearn/scipy几个库的使用．
->流程：数据爬取->加载->归一化->特征选择->RFE建模->ML分类算法->参数优化
->* 加载*.csv数据文件
->* 各种skilearn中包含的经典Machine Learning分类算法
->* 参数优化模型
-
+流程：数据爬取->加载->归一化->特征选择->RFE建模->ML分类算法->参数优化
+```
+加载*.csv数据文件
+各种skilearn中包含的经典Machine Learning分类算法
+参数优化模型
+```
 ---
 
-###10.my_profile：对python脚本运行时间profile,测试性能瓶颈.
->* 使用方式：命令行输入python my_profile -p xxx.py，将输出报告到屏幕.
->* 使用python内置模块pstats.
-
+###10.my_profile
+功能:对python脚本运行时间profile,测试性能瓶颈.
+```
+使用方式：命令行输入python my_profile -p xxx.py，将输出报告到屏幕.
+使用python内置模块pstats.
+```
 ---
