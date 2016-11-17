@@ -13,6 +13,8 @@ script_pys
     8.pointer_operation
     9.big_data
     10.my_profile
+    11.algorithms.py
+    12.short_path.py
 ```
 ---
 
@@ -160,3 +162,25 @@ pyMongo的使用总结
 使用python内置模块pstats.
 ```
 ---
+
+###11.algorithms
+功能：常见的面试算法题解答，python版
+```
+题目名：
+    partition
+    median
+    small k
+    quicksort
+    the first number which apear once
+    implement add without '+ - * /'
+    fib
+    Clockwise matrix printing
+    number of '1'
+    let odd before even in a list
+    DFS
+    BFS
+    binary tree
+```
+
+###12.short_path
+功能：几种最短路径算法
