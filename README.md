@@ -15,6 +15,8 @@ script_pys
     10.my_profile
     11.algorithms.py
     12.short_path.py
+    13.plot_excel.py
+    14.async_aiohttp_craw.py
 ```
 ---
 
@@ -184,3 +186,10 @@ pyMongo的使用总结
 
 ###12.short_path
 功能：几种最短路径算法
+
+###13.plot_excel  
+功能：使用xlsxwriter模块完成生成excel表，画图表.
+函数:ExcelGenerator,Ploter
+
+###14.async_aiohttp_craw
+功能：asyncio，aiohttp完成异步爬取，能够高并发爬取大量数据。
