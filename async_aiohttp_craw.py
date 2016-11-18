@@ -25,7 +25,7 @@ class FetchPage(object):
                     return await response.read()
             elif method == 'post':
                 data = data
-                async with session.post(url, data) as response:
+                async with session.post(url, data= data) as response:
                     return await response.read()
 
     async def run(self, loop, urls):
