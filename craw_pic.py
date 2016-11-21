@@ -1,32 +1,32 @@
 # coding=utf-8
 '''
-********整站抓取图片,使用gevent+requests异步下载方式********
-*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取
-*2.使requests下载
-*3.正则爬取url所有图片
-*4.协程处理图片下载任务
-*5.tqdm显示进度
-*6.自动打开文件夹窗口展示图片
+********  整站抓取图片,使用gevent+requests异步下载方式  ********
+	*1.lxml包xpath工具获取url,其中xpath从chrome开发者工具获取
+	*2.使requests下载
+	*3.正则爬取url所有图片
+	*4.协程处理图片下载任务
+	*5.tqdm显示进度
+	*6.自动打开文件夹窗口展示图片
 '''
 import re
 import requests
-from tqdm import *
+import tqdm
 import os
 import time
 from lxml import etree
+import gevent
 from gevent import monkey
 monkey.patch_all()
-import gevent
 
-#--------创建路径,储存图片------------
+# --------创建路径,储存图片------------
 BASEPATH = os.getcwd() + '/49vvpic/'
-ORIGIN_URL = 'http://www.fve2.com/404.html?/'
+ORIGIN_URL = 'http://www.de4f.com/404.html?/'
 
 
 def get_urls(root_url, numth_url):
     res = requests.get(numth_url)
     selector = etree.HTML(res.content)
-    #------取中文标题------"
+    # ------取中文标题------"
     pic_name = selector.xpath(
         "//*[@id='gotop']/div[2]/div/div/div[3]/div/ul/li/a/text()")
     pic = selector.xpath("//*[@id='gotop']/div[2]/div/div/div[3]/div/ul/li/a")
@@ -39,7 +39,8 @@ def get_pic_url(url):  # 获取指定url下的所有图片url
     res = requests.get(url)
     # 图片所在标签: <a href=""><img src="" alt=""/></a></P>
     pic_urls = re.findall(
-        '<a href=".*?"><img  src="(.*?)" alt=".*?" /></a></P>', res.text, re.S)  # 正则匹配
+        '<a href=".*?"><img  src="(.*?)" alt=".*?" /></a></P>',
+        res.text, re.S)  # 正则匹配
     print('\n图片数量:', len(pic_urls))
     # 每个网页最多下20张,因为很多重复的图片
     return pic_urls if len(pic_urls) <= 10 else pic_urls[:20]
@@ -60,7 +61,7 @@ def choose(root_url):
     areas = ['asia', 'oumei', 'zipai', 'meitui', 'cartoon']
     while True:
         area = input('看什么区?请输入拼音:')
-        print (area)
+        print(area)
         if area in areas:
             break
     number = input('爬取第几页?:')
@@ -92,8 +93,12 @@ def test():
         '<div class="zhuli">.*?<a href=".*?">(.*?)</a>', r.text, re.S)
     print('root_url:', root_url)
     # 选择页面,第一页,第二页>..
-    numth_url = choose(root_url[0])
-    print(numth_url)
+    if root_url:
+        numth_url = choose(root_url[0])
+        print(numth_url)
+    else:
+        print('网页已挂，请更改ORIGIN_URL。')
+        exit(0)
     # 解决指定页有时返回0个url的情况
     while True:
         (numofurl, urls) = get_urls(root_url[0], numth_url)
@@ -105,6 +110,7 @@ def test():
         os.system('nautilus ' + BASEPATH)  # 打开文件夹图像窗口
     # 开始下载
     do_work(BASEPATH, urls)
+
 
 if __name__ == '__main__':
     test()
