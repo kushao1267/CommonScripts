@@ -10,7 +10,7 @@
 		requirements:
 			requests (2.11.1)
 			PySocks (1.5.7)
-			lxml (3.6.4)
+			lxml (3.6.4) 
 			gevent (1.1.2)
 '''
 import re
