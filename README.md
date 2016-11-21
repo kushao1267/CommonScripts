@@ -186,22 +186,30 @@ pyMongo的使用总结
 ```
 
 ###12.short_path
+```
 功能：
     几种最短路径算法
+```
 
 ###13.plot_excel  
+```
 功能：
     使用xlsxwriter模块完成生成excel表，画图表.
 函数:
     ExcelGenerator,Ploter
+```
 
 ###14.async_aiohttp_craw
+```
 功能：
     asyncio，aiohttp完成异步爬取
     特点是能够高并发爬取大量数据。
+```
 
 ###15.moctest
+```
 功能：
     unittest与moc实现单元测试
     moc用于模仿第三方服务的返回值，省去等待响应时间
     moc.patch()与moc.patch.object()
+```
