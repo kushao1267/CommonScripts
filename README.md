@@ -187,12 +187,12 @@ pyMongo的使用总结
 
 ###12.short_path
 ```
-说明：
-    松弛技术
-    Bellman-Ford算法
-    Dijkstra算法
-    Johnson,基于多对多的稀疏图
-    Floyd Warshall，仅考虑距离
+说明：最短路径算法
+    - 松弛技术
+    - Bellman-Ford算法
+    - Dijkstra算法
+    - Johnson,基于多对多的稀疏图
+    - Floyd Warshall，仅考虑距离
 ```
 
 ###13.plot_excel  
