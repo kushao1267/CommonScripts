@@ -28,22 +28,18 @@ script_pys
     - 提取所有urls的首页并去重,正则表达式 
     - 将首页地址保存到数据库(MySql/MongoDB) 
     - gevent+requests异步下载首页内容html 
-    - 将首页内容html通过smtp邮件发送 
-```
-
-urls.txt文件(与脚本在相同路径下)格式如下: 
-
-```
-# urls.txt:
-http://www.kingdee.com/s?a=b 
-http://www.kingdee.com/index 
-asdasd 
-http://www.baidu.com/admin 
-111http://www.baidu.com/upload 
-fggdfghttp://www.baidu.com/login 
-http://www.kingdee.com/login 
-a 
-http://www.sina.com.cn 
+    - 将首页内容html通过smtp邮件发送
+    
+# urls.txt(与脚本在相同路径下):
+    http://www.kingdee.com/s?a=b 
+    http://www.kingdee.com/index 
+    asdasd 
+    http://www.baidu.com/admin 
+    111http://www.baidu.com/upload 
+    fggdfghttp://www.baidu.com/login 
+    http://www.kingdee.com/login 
+    a 
+    http://www.sina.com.cn 
 
 待解决问题: 
     1.爬取图片并作为邮件附件发送</br>
@@ -134,9 +130,12 @@ http://www.sina.com.cn
 ```
 
 
-###9.big_data：机器学习与大数据分析,主要是numpy/pandas/skilearn/scipy几个库的使用．
-流程：数据爬取->加载->归一化->特征选择->RFE建模->ML分类算法->参数优化
+###9.big_data
 ```
+功能：
+    - 机器学习与大数据分析,主要是numpy/pandas/skilearn/scipy几个库的使用．
+流程：
+    - 数据爬取->加载->归一化->特征选择->RFE建模->ML分类算法->参数优化
 说明：
     - 加载*.csv数据文件
     - 各种skilearn中包含的经典Machine Learning分类算法
@@ -191,7 +190,8 @@ http://www.sina.com.cn
 功能：
     - 使用xlsxwriter模块完成生成excel表，画图表.
 函数:
-    - ExcelGenerator,Ploter
+    - ExcelGeneratorw生成excel表
+    - Ploter画图表
 ```
 
 
