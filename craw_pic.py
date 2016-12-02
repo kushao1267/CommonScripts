@@ -7,19 +7,12 @@
 		*4.协程处理图片下载任务
 		*5.加入代理proxies
 		*6.自动打开文件夹窗口展示图片
-<<<<<<< HEAD
-		requirements:
-			requests (2.11.1)
-			PySocks (1.5.7)
-			lxml (3.6.4) 
-			gevent (1.1.2)
-=======
-requirements:
-	requests (2.11.1)
-	PySocks (1.5.7)
-	lxml (3.6.4)
-	gevent (1.1.2)
->>>>>>> 885db587fd1033616c69026ad80798cfd1dca9df
+		
+	requirements:
+		- requests (2.11.1)
+		- PySocks (1.5.7) - socks代理      
+		- lxml (3.6.4)
+		- gevent (1.1.2)
 '''
 import re
 import requests
