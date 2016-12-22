@@ -17,12 +17,12 @@ def main():
     print('-' * 43)
     try:
         gen_config(CONFIG_NAME)
-        key = check()
+        key = check(PROXY, URL_CHECK, TIMEOUT)
         if key in ['Y', 'y']:
-            switch()
+            switch(BASE_PATH, FILE)
     except:
         print('未连接VPN...')
-        switch()
+        switch(BASE_PATH, FILE)
     finally:
         exit(0)
         print('-' * 43)
@@ -44,19 +44,19 @@ def gen_config(file_name):
         exit(0)
 
 
-def check():
+def check(proxy, url_check, timeout):
     '''
         检查节点是否可用
     '''
-    proxies = PROXY  # 安装pysocks使requests能够代理
-    res = requests.get(URL_CHECK,
-                       proxies=proxies, timeout=TIMEOUT)
+    proxies = proxy  # 安装pysocks使requests能够代理
+    res = requests.get(url_check,
+                       proxies=proxies, timeout=timeout)
     print('VPN已连接 :{} !'.format(res.status_code))
     key = input('是否切换VPN？ y/Y')
     return key
 
 
-def switch():
+def switch(base_path, file):
     '''
         重启翻墙程序.
         防止上次后台运行时的进程占用端口.
@@ -65,8 +65,8 @@ def switch():
     iss = input('选择节点?  (0,1,2,3)?')
     if iss not in ['0', '1', '2', '3']:
         iss = '0'
-    task = 'sudo nohup python3 ' + BASE_PATH + '/' + '{0} {1} {2} & '.format(
-        'ssconfig.py', iss, FILE)
+    task = 'sudo nohup python3 ' + base_path + '/' + '{0} {1} {2} & '.format(
+        'ssconfig.py', iss, file)
     print(task)
     Popen(task, shell=True)
     print('连接成功...')
