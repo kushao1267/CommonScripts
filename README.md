@@ -15,10 +15,9 @@
     10.my_profile
     11.algorithms
     12.short_path
-    13.plot_excel
-    14.async_aiohttp_craw
-    15.moctest.py
-    16.shadowsocks
+    13.async_aiohttp_craw
+    14.moctest.py
+    15.shadowsocks
 ```
 
 
@@ -164,7 +163,7 @@
     - small k
     - quicksort
     - the first number which apear once
-    - implement add without '+ - * /'
+    - implement addition without '+ - * /'
     - fib
     - Clockwise matrix printing
     - number of '1'
@@ -186,17 +185,7 @@
 ```
 
 
-###13.plot_excel  
-```
-功能：
-    - 使用xlsxwriter模块完成生成excel表，画图表.
-函数:
-    - ExcelGeneratorw生成excel表
-    - Ploter画图表
-```
-
-
-###14.async_aiohttp_craw
+###13.async_aiohttp_craw
 ```
 功能：
     - asyncio，aiohttp完成异步爬取
@@ -204,7 +193,7 @@
 ```
 
 
-###15.moctest
+###14.moctest
 ```
 功能：
     - unittest与moc实现单元测试
