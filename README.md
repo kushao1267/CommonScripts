@@ -218,7 +218,7 @@
     ssstart.py 
     ssconfig.py
 要求:
-    安装pysocks
+    pip安装pysocks,requests,lxml
     安装shadowsocks客户端
     python3环境
 功能：
