@@ -3,25 +3,24 @@
 ###目录:
 
 ```
-    1.extract_urls 
-    2.craw_pic 
-    3.zodiac 
-    4.mongoDB_use 
-    5.sinaweibo_login 
-    6.sort_method
-    7.decorator
-    8.pointer_operation
-    9.big_data
-    10.my_profile
-    11.algorithms
-    12.short_path
-    13.async_aiohttp_craw
-    14.moctest.py
-    15.shadowsocks
+    1.extract_urls: 一个提取url首页进行各种处理的脚本
+    2.craw_pic: 抓取某x0网站xx区全部图片
+    3.mongoDB_use: pyMongo的使用总结 
+    4.sinaweibo_login: 新浪微博模拟登陆,POST方式和cookie方式
+    5.sort_method: 完成6种排序算法
+    6.decorator: 装饰器相关
+    7.pointer_operation: Python版的结构体指针操作
+    8.big_data: 大数据操作等
+    9.my_profile: 对python脚本运行时间profile,测试性能瓶颈
+    10.algorithms: 常见的面试算法题解答，python版
+    11.short_path: 最短路径算法
+    12.async_aiohttp_craw: asyncio，aiohttp完成异步爬取
+    13.moctest.py:unittest与moc实现单元测试
+    14.shadowsocks: ss脚本,可自动配置和使用自己的ss或免费ss
 ```
 
 
-###1.extract_urls:一个提取url首页进行各种处理的脚本
+###1.extract_urls
 ```
 功能: 
     - 提取参数,如:pythoon extract_urls.py -h中的h进行处理    
@@ -47,7 +46,7 @@
 ```
 
 
-###2.craw_pic:抓取某x0网站xx区全部图片
+###2.craw_pic
 ```
 功能: 
     - lxml包xpath工具获取url,其中xpath从chrome开发者工具获取.
@@ -63,14 +62,8 @@
     2.网址挂掉如何使用它的备用网站(代码已写等它挂) 
 ```
 
-###3.zodiac:根据日期计算星座 
-```
-功能:  
-    - 计算星座 
-    - 处理边界条件 
-```
 
-###4.mongoDB_use:pyMongo的使用总结
+###4.mongoDB_use
 ```
 功能:  
     - pyMongo的使用总结 
@@ -78,7 +71,7 @@
 ```
 
 
-###5.sinaweibo_login:新浪微博模拟登陆,POST方式和cookie方式
+###5.sinaweibo_login
 ```
 功能:  
     - 新浪微博模拟登陆,POST方式 
@@ -88,7 +81,7 @@
 ```
 
 
-###6.sort_method:完成6种排序算法
+###6.sort_method
 ```
 功能: 
     - python完成六种排序算法   
@@ -102,7 +95,7 @@
 ```
 
 
-###7.decorator:装饰器 
+###7.decorator
 ```
 功能:
     - 装饰器decorator 
@@ -112,7 +105,7 @@
 ```
 
 
-###8.pointer_operation: Python版的结构体指针操作,之前用C写了一遍，现在再熟悉一下
+###8.pointer_operation
 ```
 功能:
     - 链表指针操作  
