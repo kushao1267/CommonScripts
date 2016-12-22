@@ -222,9 +222,9 @@
     安装shadowsocks客户端
     python3环境
 功能：
-    创建ss配置并修改权限
-    支持使用自己的ss,修改ssconfig.py中的select_point['0']即可
-    支持爬取免费ss使用.
+    创建ss配置并修改权限.
+    支持使用自己的ss,修改ssconfig.py中的select_point['0']即可.
+    支持使用的免费ss.
 使用:
     sudo python ssstart.py
     
