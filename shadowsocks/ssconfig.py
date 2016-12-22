@@ -20,11 +20,11 @@ config = {
 }
 
 point = {
-    '0': {  # ss
-        'server': "",# server host
-        'server_port': ,# server port
-        'password': "", # passwd
-        'method': "rc4-md5" # method
+    '0': {  # jianliu.ss
+        'server': "", # server host
+        'server_port': , # server port
+        'password': "", # password
+        'method': "rc4-md5" # mathod
     },
     '1': {  # iss A
         'server': '//*[@id="free"]/div/div[2]/div[1]/h4[1]',
@@ -78,7 +78,7 @@ def main():
         with open(file, 'w') as f:
             json.dump(config, f)
             # 运行配置脚本
-            Popen('sslocal -c ' + file, shell=True)
+            Popen('sudo sslocal -c ' + file, shell=True)
     except Exception:
         print('打开文件失败！')
     finally:

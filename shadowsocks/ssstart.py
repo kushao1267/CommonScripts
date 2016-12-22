@@ -7,6 +7,7 @@ PROXY = {'http': "socks5://127.0.0.1:1080"}  # 配置本地代理端口
 TIMEOUT = 4
 URL_CHECK = 'http://www.google.com'  # 用于检测ss是否连接成功
 CONFIG_NAME = 'ss_free'  # ss的配置文件名,可自定义
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def main():
@@ -64,8 +65,8 @@ def switch():
     iss = input('选择节点?  (0,1,2,3)?')
     if iss not in ['0', '1', '2', '3']:
         iss = '0'
-    task = 'nohup python3 ' + os.getcwd() + '/' + '{0} {1} {2} & '.format(
-        'internet.py', iss, FILE)
+    task = 'sudo nohup python3 ' + BASE_PATH + '/' + '{0} {1} {2} & '.format(
+        'ssconfig.py', iss, FILE)
     print(task)
     Popen(task, shell=True)
     print('连接成功...')
@@ -75,7 +76,7 @@ def kill_process(pid_name):
     '''
         kill指定名称的进程
     '''
-    Popen("pkill -f {0}".format(pid_name), shell=True)
+    Popen("sudo pkill -f {0}".format(pid_name), shell=True)
     print('清除进程...')
 
 
