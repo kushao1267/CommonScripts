@@ -13,18 +13,19 @@
     8.pointer_operation
     9.big_data
     10.my_profile
-    11.algorithms.py
-    12.short_path.py
-    13.plot_excel.py
-    14.async_aiohttp_craw.py
+    11.algorithms
+    12.short_path
+    13.plot_excel
+    14.async_aiohttp_craw
     15.moctest.py
+    16.shadowsocks
 ```
 
 
 ###1.extract_urls:一个提取url首页进行各种处理的脚本
 ```
 功能: 
-    - 提取参数,如:pythoon Extract_urls.py -h中的h进行处理    
+    - 提取参数,如:pythoon extract_urls.py -h中的h进行处理    
     - 提取所有urls的首页并去重,正则表达式 
     - 将首页地址保存到数据库(MySql/MongoDB) 
     - gevent+requests异步下载首页内容html 
@@ -211,3 +212,21 @@
     - moc.patch()与moc.patch.object()
 ```
 
+###15.shadowsocks
+```
+文件:
+    ssstart.py 
+    ssconfig.py
+要求:
+    安装pysocks
+    安装shadowsocks客户端
+    python3环境
+功能：
+    创建ss配置并修改权限
+    支持使用自己的ss,修改ssconfig.py中的select_point['0']即可
+    支持爬取免费ss使用.
+使用:
+    sudo python ssstart.py
+    
+    ps: 1,2,3 选项:使用免费ss;0 选项:使用自己的ss
+```
