@@ -20,7 +20,7 @@ config = {
 }
 
 point = {
-    '0': {  # jianliu.ss
+    '0': {  # 
         'server': "", # server host
         'server_port': , # server port
         'password': "", # password
@@ -70,7 +70,7 @@ def main():
     iss = sys.argv[1]
     file = sys.argv[2]
     res = requests.get(vpn_url)
-    # 选择节点,配置ss服务器
+    # 选择节点,配置ss客户端
     config['server'], config['server_port'], config[
         'password'], config['method'] = select_point(iss, res)
     # 改变配置
