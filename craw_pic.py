@@ -106,12 +106,11 @@ def test():
         '<div class="zhuli">.*?<a href=".*?">(.*?)</a>', r.text, re.S)
     print('root_url:', root_url)
     # 选择页面,第一页,第二页>..
-    if root_url:
-        numth_url = choose(root_url[0])
-        print(numth_url)
-    else:
+    if not root_url:
         print('网页已挂，请更改ORIGIN_URL。')
-        exit(0)
+        exit(0)     # 退出
+    numth_url = choose(root_url[0])
+    print(numth_url)
     # 解决指定页有时返回0个url的情况
     while True:
         (numofurl, urls) = get_urls(root_url[0], numth_url)
