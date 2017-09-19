@@ -1,8 +1,8 @@
-#Common Python Scripts
-###开发环境:
+## Common Python Scripts
+- 开发环境:
     `python2.7`
     
-###目录:
+**目录**:
 
 ```
     1.extract_urls: 一个提取url首页进行各种处理的脚本
@@ -22,7 +22,7 @@
 ```
 
 
-###1.extract_urls
+### 1.extract_urls
 ```
 功能: 
     - 提取参数,如:pythoon extract_urls.py -h中的h进行处理    
@@ -48,7 +48,7 @@
 ```
 
 
-###2.craw_pic
+### 2.craw_pic
 ```
 功能: 
     - lxml包xpath工具获取url,其中xpath从chrome开发者工具获取.
@@ -65,7 +65,7 @@
 ```
 
 
-###4.mongoDB_use
+### 4.mongoDB_use
 ```
 功能:  
     - pyMongo的使用总结 
@@ -73,7 +73,7 @@
 ```
 
 
-###5.sinaweibo_login
+### 5.sinaweibo_login
 ```
 功能:  
     - 新浪微博模拟登陆,POST方式 
@@ -83,7 +83,7 @@
 ```
 
 
-###6.sort_method
+### 6.sort_method
 ```
 功能: 
     - python完成六种排序算法   
@@ -97,7 +97,7 @@
 ```
 
 
-###7.decorator
+### 7.decorator
 ```
 功能:
     - 装饰器decorator 
@@ -107,7 +107,7 @@
 ```
 
 
-###8.pointer_operation
+### 8.pointer_operation
 ```
 功能:
     - 链表指针操作  
@@ -125,7 +125,7 @@
 ```
 
 
-###9.big_data
+### 9.big_data
 ```
 功能：
     - 机器学习与大数据分析,主要是numpy/pandas/skilearn/scipy几个库的使用．
@@ -138,7 +138,7 @@
 ```
 
 
-###10.my_profile
+### 10.my_profile
 ```
 功能:
     - 对python脚本运行时间profile,测试性能瓶颈.
@@ -148,7 +148,7 @@
 ```
 
 
-###11.algorithms
+### 11.algorithms
 ```
 功能：
     - 常见的面试算法题解答，python版
@@ -169,7 +169,7 @@
 ```
 
 
-###12.short_path
+### 12.short_path
 ```
 说明：最短路径算法
     - 松弛技术
@@ -180,7 +180,7 @@
 ```
 
 
-###13.async_aiohttp_craw
+### 13.async_aiohttp_craw
 ```
 功能：
     - asyncio，aiohttp完成异步爬取
@@ -188,7 +188,7 @@
 ```
 
 
-###14.moctest
+### 14.moctest
 ```
 功能：
     - unittest与moc实现单元测试
@@ -196,7 +196,7 @@
     - moc.patch()与moc.patch.object()
 ```
 
-###15.shadowsocks
+### 15.shadowsocks
 ```
 文件:
     ssstart.py 
