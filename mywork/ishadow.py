@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 import os
 import json
-import subprocess
 import requests
 
 from lxml import etree
@@ -43,7 +42,7 @@ def _get_ss_config(url):
     }
     ss_config = json.dumps(ss_config)
     with open('{}/ss_log'.format(DIR_NAME), 'a') as l:
-        l.write('获取配置成功: {}\n'.format(ss_config))
+        l.write('{} {}\n'.format('获取配置成功:'.encode('utf8'),ss_config))
     return ss_config
 
 
@@ -56,7 +55,7 @@ def save_config(config):
             f.write(config)
     except Exception as e:
         with open('{}/ss_log'.format(DIR_NAME), 'a') as l:
-            l.write('创建配置文件失败: {}\n'.format(e))
+            l.write(u'{} {}\n'.format('创建配置文件失败:'.encode('utf8'), e))
 
 
 if __name__ == '__main__':
