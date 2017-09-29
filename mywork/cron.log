@@ -1,0 +1,154 @@
+active the python3 environment...
+grap the shadowsocks configurations...
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+2017-09-29 15:23:08 INFO     loading libsodium from /usr/local/lib/libsodium.dylib
+stopped
+active the python3 environment...
+grap the shadowsocks configurations...
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+2017-09-29 15:23:18 INFO     loading libsodium from /usr/local/lib/libsodium.dylib
+stopped
+active the python3 environment...
+grap the shadowsocks configurations...
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x103934f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='ss.ishadowx.net', port=443): Max retries exceeded with url: /index_cn.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x103934f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/CommonScripts/mywork/ishadow.py", line 62, in <module>
+    ss_config = _get_ss_config(HEAD_PAGE)
+  File "/Users/jianliu/CommonScripts/mywork/ishadow.py", line 21, in _get_ss_config
+    res = requests.get(url)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/sessions.py", line 502, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/sessions.py", line 612, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='ss.ishadowx.net', port=443): Max retries exceeded with url: /index_cn.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x103934f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+2017-09-29 15:30:35 INFO     loading libsodium from /usr/local/lib/libsodium.dylib
+stopped
+active the python3 environment...
+grap the shadowsocks configurations...
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x103936f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/urllib3/util/retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='ss.ishadowx.net', port=443): Max retries exceeded with url: /index_cn.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x103936f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jianliu/CommonScripts/mywork/ishadow.py", line 62, in <module>
+    ss_config = _get_ss_config(HEAD_PAGE)
+  File "/Users/jianliu/CommonScripts/mywork/ishadow.py", line 21, in _get_ss_config
+    res = requests.get(url)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/sessions.py", line 502, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/sessions.py", line 612, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='ss.ishadowx.net', port=443): Max retries exceeded with url: /index_cn.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x103936f28>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+2017-09-29 15:30:45 INFO     loading libsodium from /usr/local/lib/libsodium.dylib
+stopped
+active the python3 environment...
+grap the shadowsocks configurations...
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+2017-09-29 15:30:58 INFO     loading libsodium from /usr/local/lib/libsodium.dylib
+stopped
+active the python3 environment...
+grap the shadowsocks configurations...
+Traceback (most recent call last):
+  File "/Users/jianliu/CommonScripts/mywork/ishadow-new.py", line 134, in <module>
+    ss_config = _get_ss_config(HEAD_PAGE, method=sys.argv[1])
+  File "/Users/jianliu/CommonScripts/mywork/ishadow-new.py", line 116, in _get_ss_config
+    l.write('\u83b7\u53d6\u914d\u7f6e\u6210\u529f: \n{}'.format(ss_config))
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+restart the sslocal service
+INFO: loading config from /Users/jianliu/CommonScripts/mywork/ss_config.json
+Traceback (most recent call last):
+  File "/Users/jianliu/py3.5/bin/sslocal", line 11, in <module>
+    sys.exit(main())
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/shadowsocks/local.py", line 39, in main
+    config = shell.get_config(True)
+  File "/Users/jianliu/py3.5/lib/python3.5/site-packages/shadowsocks/shell.py", line 149, in get_config
+    with open(config_path, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jianliu/CommonScripts/mywork/ss_config.json'

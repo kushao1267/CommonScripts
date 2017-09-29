@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BASE_URL	../ishadow-qrcode.py	/^BASE_URL = 'https:\/\/ss.ishadowx.net\/'$/;"	kind:variable	line:17
+BASE_URL	../ishadow.py	/^BASE_URL = 'https:\/\/ss.ishadowx.net\/'$/;"	kind:variable	line:11
+CONFIG_GLOABL	../ishadow-qrcode.py	/^CONFIG_GLOABL = ''$/;"	kind:variable	line:19
+CONFIG_GLOABL	../ishadow.py	/^CONFIG_GLOABL = ''$/;"	kind:variable	line:13
+DIR_NAME	../ishadow-qrcode.py	/^DIR_NAME = os.path.dirname(os.path.abspath(__file__))$/;"	kind:variable	line:20
+DIR_NAME	../ishadow.py	/^DIR_NAME = os.path.dirname(os.path.abspath(__file__))$/;"	kind:variable	line:14
+HEAD_PAGE	../ishadow-qrcode.py	/^HEAD_PAGE = BASE_URL + 'index_cn.html'$/;"	kind:variable	line:18
+HEAD_PAGE	../ishadow.py	/^HEAD_PAGE = BASE_URL + 'index_cn.html'$/;"	kind:variable	line:12
+Image	../ishadow-qrcode.py	/^from PIL import Image$/;"	kind:namespace	line:7
+MIMEImage	../ishadow-qrcode.py	/^from email.mime.image import MIMEImage$/;"	kind:namespace	line:13
+MIMEMultipart	../ishadow-qrcode.py	/^from email.mime.multipart import MIMEMultipart$/;"	kind:namespace	line:12
+MIMEText	../ishadow-qrcode.py	/^from email.mime.text import MIMEText$/;"	kind:namespace	line:11
+TIME_SECONDS	../ishadow-qrcode.py	/^TIME_SECONDS = 5$/;"	kind:variable	line:21
+_get_ss_config	../ishadow-qrcode.py	/^def _get_ss_config(url, method='URL'):$/;"	kind:function	line:64
+_get_ss_config	../ishadow.py	/^def _get_ss_config(url):$/;"	kind:function	line:17
+_qr_decode	../ishadow-qrcode.py	/^def _qr_decode(img_path):$/;"	kind:function	line:54
+base64	../ishadow-qrcode.py	/^import base64$/;"	kind:namespace	line:4
+etree	../ishadow-qrcode.py	/^from lxml import etree$/;"	kind:namespace	line:9
+etree	../ishadow.py	/^from lxml import etree$/;"	kind:namespace	line:6
+ishadow-qrcode.py	../ishadow-qrcode.py	1;"	kind:file	line:1
+ishadow.py	../ishadow.py	1;"	kind:file	line:1
+json	../ishadow-qrcode.py	/^import json$/;"	kind:namespace	line:3
+json	../ishadow.py	/^import json$/;"	kind:namespace	line:3
+os	../ishadow-qrcode.py	/^import os$/;"	kind:namespace	line:2
+os	../ishadow.py	/^import os$/;"	kind:namespace	line:2
+re	../ishadow-qrcode.py	/^import re$/;"	kind:namespace	line:10
+requests	../ishadow-qrcode.py	/^import requests$/;"	kind:namespace	line:6
+requests	../ishadow.py	/^import requests$/;"	kind:namespace	line:4
+save_config	../ishadow-qrcode.py	/^def save_config(config):$/;"	kind:function	line:119
+save_config	../ishadow.py	/^def save_config(config):$/;"	kind:function	line:49
+send_email	../ishadow-qrcode.py	/^def send_email(qrimg_path):$/;"	kind:function	line:24
+sleep	../ishadow-qrcode.py	/^from time import sleep$/;"	kind:namespace	line:5
+smtplib	../ishadow-qrcode.py	/^import smtplib$/;"	kind:namespace	line:14
+zbarlight	../ishadow-qrcode.py	/^import zbarlight$/;"	kind:namespace	line:8
