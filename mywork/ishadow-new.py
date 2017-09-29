@@ -20,11 +20,14 @@ HEAD_PAGE = BASE_URL + 'index_cn.html'
 CONFIG_GLOABL = ''
 DIR_NAME = os.path.dirname(os.path.abspath(__file__))
 TIME_SECONDS = 5
+FROM_EMAIL_ADDRESS = '461698053@qq.com'
+TO_EMAIL_ADDRESS = 'kushao1267@aliyun.com'
+KEY_FROM_QQ = ''
 
 
 def send_email(qrimg_path):
-    from_mail = '461698053@qq.com'
-    to_mail = 'kushao1267@aliyun.com'
+    from_mail = FROM_EMAIL_ADDRESS
+    to_mail = TO_EMAIL_ADDRESS
 
     msg = MIMEMultipart()
     msg['From'] = from_mail
@@ -44,7 +47,8 @@ def send_email(qrimg_path):
     server = smtplib.SMTP(host='smtp.qq.com')
     server.starttls()
     try:
-        server.login('461698053@qq.com', 'wsuywtprasbebjhh')
+        # 从qq邮箱配置获取key
+        server.login(FROM_EMAIL_ADDRESS, KEY_FROM_QQ)
     except Exception as e:
         with open('{}/ss_log'.format(DIR_NAME), 'a') as l:
             l.write('发信服务挂了: {}\n'.format(e))
