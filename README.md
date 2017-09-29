@@ -1,3 +1,14 @@
+## mywork
+- 开发环境：
+    `python3.5.2`
+```
+    1.set_up_new.sh : 启动自动配置shadowsocks的脚本，需要sudo权限，需要修改里面的home目录为自己的,py3.5是python3.5.2的虚拟环境
+    2.ishadow-new.py : 抓取并配置shadowsocks的脚本，支持html解析和二维码两种方式
+    3.ss_log : 抓取、配置过程中的日志
+    4.qr_img.png : 抓取到的二维码
+    5.ss_config : 抓取到的shadowsocks的json
+```
+    
 ## Common Python Scripts
 - 开发环境:
     `python2.7`
