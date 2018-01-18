@@ -78,7 +78,8 @@
 
 ### 4.mongoDB_use
 ```
-功能:  
+环境: python3.5
+功能: 
     - pyMongo的使用总结 
     - 增删查更 
 ```
