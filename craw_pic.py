@@ -12,7 +12,7 @@
 		- requests (2.11.1)
 		- lxml (3.6.4)
 		- gevent (1.1.2)
-        - tqdm (4.23.0)
+        	- tqdm (4.23.0)
 """
 import re
 import os
@@ -82,7 +82,12 @@ def choose(root_url):
                 area = 'asia'
             break
         print('错误，请重新输入!')
-    number = input('爬取第几页?:')
+    while True:
+        number = input('爬取第几页?:')
+        if number.isdigit():
+            break
+        print('错误，请重新输入!')
+
     # 首页index,第二页index-2,第三页index-3...
     number = '' if number == '1' or number == '' else '-' + number
     return root_url + 'AAtupian/AAtb/' + area + '/index' + number + '.html'
