@@ -12,7 +12,7 @@
 		- requests (2.11.1)
 		- lxml (3.6.4)
 		- gevent (1.1.2)
-        	- tqdm (4.23.0)
+        - tqdm (4.23.0)
 """
 import re
 import os
@@ -70,11 +70,16 @@ def download(title, url, proxy_on=False):  # 图片下载
 
 
 def choose(root_url):
-    print('亚洲:asia,欧美:oumei,自拍:zipai,美腿:meitui,动漫:cartoon')
-    areas = ['asia', 'oumei', 'zipai', 'meitui', 'cartoon']
+    """
+        用户选择抓取的图片区
+    """
+    areas = ['asia', 'oumei', 'zipai', 'meitui', 'cartoon', '']
     while True:
-        area = input('看什么区? 请输入选项:')
+        area = input(
+            '亚洲:asia,欧美:oumei,自拍:zipai,美腿:meitui,动漫:cartoon\n爬取什么区? 请输入选项:')
         if area in areas:
+            if area == '':  # 默认为亚洲区
+                area = 'asia'
             break
         print('错误，请重新输入!')
     number = input('爬取第几页?:')
