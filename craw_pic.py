@@ -10,7 +10,6 @@
 
 	requirements:
 		- requests (2.11.1)
-		- PySocks (1.5.7) - socks代理
 		- lxml (3.6.4)
 		- gevent (1.1.2)
         	- tqdm (4.23.0)
@@ -74,9 +73,10 @@ def choose(root_url):
     print('亚洲:asia,欧美:oumei,自拍:zipai,美腿:meitui,动漫:cartoon')
     areas = ['asia', 'oumei', 'zipai', 'meitui', 'cartoon']
     while True:
-        area = input('看什么区?请输入拼音:')
+        area = input('看什么区? 请输入选项:')
         if area in areas:
             break
+        print('错误，请重新输入!')
     number = input('爬取第几页?:')
     # 首页index,第二页index-2,第三页index-3...
     number = '' if number == '1' or number == '' else '-' + number
@@ -105,8 +105,8 @@ def craw():
     try:
         # 从防黑页面获取root_url,防止网页挂掉
         r = requests.get(ORIGIN_URL, allow_redirects=True)
-    except Exception:
-        print('网络链接失败!请检查网络:')
+    except Exception as e:
+        print('网络链接失败!请检查网络:{}\n'.format(e))
         exit(0)
     root_url = re.findall(
         '<div class="zhuli">.*?<a href=".*?">(.*?)</a>', r.text, re.S)
