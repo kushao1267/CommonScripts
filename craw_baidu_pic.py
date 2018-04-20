@@ -99,7 +99,7 @@ def _craw_pic(session, url, page_num, path=DIR_NAME):
     url = url.replace("\\", "")  # 去掉转义符
     temp = url.split("u=")[-1]
     file_path = path + temp.split("&")[0] + temp.split(".")[-1]
-    if _is_image_exist(file_path) is False:
+    if os.path.isfile(file_path) is False:
         print("爬取: ", url)
         try:
             req = session.get(url, headers=HEADERS, timeout=8)
@@ -112,16 +112,7 @@ def _craw_pic(session, url, page_num, path=DIR_NAME):
     else:
         print("图片已存在!")
 
-
-def _is_image_exist(file_path):
-    """
-        判断某个文件是否已存在
-    """
-    if os.path.isfile(file_path):
-        return True
-    return False
-
-
+        
 if __name__ == "__main__":
     monkey.patch_all()
     check_directory()
