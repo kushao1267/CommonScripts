@@ -1,3 +1,18 @@
+## craw_baidu_pic.py
+
+功能:
+    批量下载百度图片某个topic下的图片：例如，美女
+    
+    - 解决Ajax请求数据(xhr)的爬取问题
+    - 解决无浏览器UA被反爬虫禁的问题
+    - 解决不带session请求页面的问题
+    - 异步io加快图片下载速度
+    
+    可供修改参数:
+        - QUERY_WORD: 关键词
+        - PAGE_NUM: 初始图片序号，默认0
+        - MAX_ARRIVE_NUM: 最大图片序号，默认10000
+
 ## mywork
 - 开发环境：
     `python3.5.2`
