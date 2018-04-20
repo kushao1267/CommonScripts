@@ -1,4 +1,18 @@
 # coding=utf-8
+"""
+    批量下载百度图片某个topic下的图片：例如，美女
+    
+    解决Ajax请求数据(xhr)的爬取问题
+    解决无浏览器UA被反爬虫禁的问题
+    解决不带session请求页面的问题
+    异步io加快图片下载速度
+    
+    可供修改参数:
+        QUERY_WORD: 关键词
+        PAGE_NUM: 初始图片序号，默认0
+        MAX_ARRIVE_NUM: 最大图片序号，默认10000
+"""
+
 import re
 import os
 import time
@@ -8,8 +22,8 @@ import gevent
 from gevent import monkey
 
 
-QUERY_WORD = "男人"  # 百度爬取关键词
-DIR_NAME = os.getcwd() + "/baidu_man/"  # 图片文件夹名称
+QUERY_WORD = "美女"  # 百度爬取关键词
+DIR_NAME = os.getcwd() + "/baidu_beauty/"  # 图片文件夹名称
 
 MAX_RANGE_NUM = 30  # rn参数，Ajax请求每页的图片数 (pn表示当前请求的图片序号，rn表示更新显示图片的数量)
 PAGE_NUM = 0  # pn参数
@@ -53,7 +67,6 @@ def page_task(session, page):
     if result:
         gevent.joinall([gevent.spawn(_craw_pic, session, url, page_num)
                         for url in result])
-        time.sleep(1)
     else:
         print("链接:{}\n未抓取到图片url".format(page))
 
