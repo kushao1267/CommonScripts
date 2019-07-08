@@ -23,11 +23,12 @@
     4.qr_img.png : 抓取到的二维码
     5.ss_config : 抓取到的shadowsocks的json
 ```
-    
+
 ## Common Python Scripts
 - 开发环境:
     `python2.7`
     
+
 **目录**:
 
 ```
@@ -242,4 +243,18 @@
     ps: 
         1,2,3 选项:使用免费ss;
         0 选项:使用自己的ss;
+```
+
+### 16.translate
+```
+文件:
+    ssstart.py 
+    ssconfig.py
+要求:
+    pip安装googletrans，click包
+功能：
+    中英文互译
+使用:
+    python3 translate.py --words [words_to_translate]
+
 ```
