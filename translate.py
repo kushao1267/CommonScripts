@@ -13,23 +13,28 @@ def translate(words, file):
     translator = Translator()
     # 读取文件
     if file:
-        with open(file, 'r') as f:
-            words_list = f.readlines()
-        words = ''.join(words_list)
+        try:
+            with open(file, 'r') as f:
+                words_list = f.readlines()
+                words = ''.join(words_list)
+        except FileNotFoundError:
+            print('文件不存在: ', file)
+            return
 
-    print('\n' * 2)
     if not check_contain_chinese(words):
         # 翻译英文
         print('翻译英文结果如下:')
+        hint_weights = 2
         t = translator.translate(words, dest='zh-CN').text
     else:
         # 翻译中文
         print('翻译中文结果如下:')
+        hint_weights = 1
         t = translator.translate(words).text
 
-    print('----------' * 8)
+    print('-' * len(t) * hint_weights)
     print(t)
-    print('----------' * 8)
+    print('-' * len(t) * hint_weights)
 
 
 def check_contain_chinese(check_str):
