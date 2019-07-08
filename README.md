@@ -248,8 +248,7 @@
 ### 16.translate
 ```
 文件:
-    ssstart.py 
-    ssconfig.py
+    translate.py
 要求:
     pip安装googletrans，click包
 功能：
