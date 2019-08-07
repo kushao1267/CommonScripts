@@ -11,18 +11,32 @@ class Sort_method(object):
     def __init__(self):
         pass
     
-    def Quicksort(self,nums):
-        if len(nums)<=1:#为空或只有一个元素时，返回它自身
-            return nums #递归的中断条件
-        small,big=[],[]
-        flag = nums.pop()#去除最右边的元素做标杆
-        for i in nums:
-            if i<flag:
-                small.append(i)
-            else:
-                big.append(i)
-                #递归调用记得用self.func_name,只有list之间才可以用+, list+int是错误的。
-        return self.Quicksort(small)+[flag]+self.Quicksort(big)
+    def quick_sort(self, arry: list, left: int, right: int):
+    """快速排序
+
+    Returns:
+        list -- 已排序列表
+    """
+    if left >= right: # left == right则少于2个元素，不用交换
+        return
+    # 初始化：基准，哨兵
+    pivot = arry[left]
+    i, j = left, right
+    while i != j:  # i与j两个哨兵没相遇则一直执行
+        while arry[j] >= pivot and i < j:
+            j -= 1
+
+        while arry[i] <= pivot and i < j:
+            i += 1
+
+        if i < j:  # 满足条件则交换
+            arry[i], arry[j] = arry[j], arry[i]
+
+    # 基准与相遇的位置交换, 相遇的位置（左边都是比基准小的数，右边都是比基准大的数）
+    arry[left], arry[i] = arry[i], arry[left]
+    # 递归处理左右两边的新数组
+    quick_sort(arry, left, i-1)
+    quick_sort(arry, i+1, right)
     
     '''
     改进的冒泡,添加flag标志: 当冒了x（x<n）个泡时，已经有序，则不继续比较
@@ -138,7 +152,7 @@ if __name__=="__main__":
     list = [3,5,1,6,9,0,7,3,2,6]
     print "原始序列：",list
     #调用快排
-    #print "快排序列：",(sort.Quicksort(list))
+    #print "快排序列：",(sort.Quicksort(list, 0, len(list)-1))
     
     #快排改进
     
