@@ -12,31 +12,31 @@ class Sort_method(object):
         pass
     
     def quick_sort(self, arry: list, left: int, right: int):
-    """快速排序
+        """快速排序
 
-    Returns:
-        list -- 已排序列表
-    """
-    if left >= right: # left == right则少于2个元素，不用交换
-        return
-    # 初始化：基准，哨兵
-    pivot = arry[left]
-    i, j = left, right
-    while i != j:  # i与j两个哨兵没相遇则一直执行
-        while arry[j] >= pivot and i < j:
-            j -= 1
+        Returns:
+            list -- 已排序列表
+        """
+        if left >= right: # left == right则少于2个元素，不用交换
+            return
+        # 初始化：基准，哨兵
+        pivot = arry[left]
+        i, j = left, right
+        while i != j:  # i与j两个哨兵没相遇则一直执行
+            while arry[j] >= pivot and i < j:
+                j -= 1
 
-        while arry[i] <= pivot and i < j:
-            i += 1
+            while arry[i] <= pivot and i < j:
+                i += 1
 
-        if i < j:  # 满足条件则交换
-            arry[i], arry[j] = arry[j], arry[i]
+            if i < j:  # 满足条件则交换
+                arry[i], arry[j] = arry[j], arry[i]
 
-    # 基准与相遇的位置交换, 相遇的位置（左边都是比基准小的数，右边都是比基准大的数）
-    arry[left], arry[i] = arry[i], arry[left]
-    # 递归处理左右两边的新数组
-    quick_sort(arry, left, i-1)
-    quick_sort(arry, i+1, right)
+        # 基准与相遇的位置交换, 相遇的位置（左边都是比基准小的数，右边都是比基准大的数）
+        arry[left], arry[i] = arry[i], arry[left]
+        # 递归处理左右两边的新数组
+        quick_sort(arry, left, i-1)
+        quick_sort(arry, i+1, right)
     
     '''
     改进的冒泡,添加flag标志: 当冒了x（x<n）个泡时，已经有序，则不继续比较
