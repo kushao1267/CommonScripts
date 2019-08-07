@@ -39,24 +39,20 @@ class Sort_method(object):
         quick_sort(arry, i+1, right)
     
     '''
-    改进的冒泡,添加flag标志: 当冒了x（x<n）个泡时，已经有序，则不继续比较
+    改进的冒泡,添加flag标志: 当有一轮比较全没交换，说明已经有序，不再进行。
     '''
-    def Bubblesort(self,nums):
-        flag,i=True,0   #初始化为无序标志
-        while i<len(nums)-1 and flag:     #长度为n的序列，只要n-1次就可以
-            flag=False  #假如上次循环没有交换一次值，说明flag=False，是已有序序列
-            j=len(nums)-1
-            #其实和选择排序很像，每次前i个都是已经排序的,所以j必须大于i,
-            #它的每一趟互相比较并且交换值把最小的放在前面
-            #而选择排序只是扫描一遍记录最小的值下标，然后与前面的交换。
-            #实际上不同就在于扫描一趟和交换一趟。
-            while j>i :
-                if nums[j]<nums[j-1]:
-                    nums[j],nums[j-1]=nums[j-1],nums[j]
-                    flag=True
-                j-=1
-            i+=1
-        return nums
+    def bubble_sort(arry: list):
+        if len(arry) < 2:
+            return
+
+        for i in range(len(arry) - 1):
+            flag = False
+            for j in range(len(arry) - i - 1):
+                if arry[j] > arry[j+1]:
+                    arry[j], arry[j+1] = arry[j+1], arry[j]
+                    flag = True
+            if not flag:
+                return
 
     '''
         选择序列最小值与第一个交换，选择剩下序列的最小值与第二个交换,以此类推....
